@@ -9,8 +9,8 @@ const CabinsSchema = Schema({
     description:{
         type:String,
         required:[true, "the field 'description' is required"],
-        maxlength: [250, 'Max 250 characters'],
-        minlength: [10, 'Min 10 characters']
+        maxlength: [10, 'Max 10 characters'],
+        minlength: [0, 'Min 0 characters']
     },
     price:{
         type:Number,
@@ -29,6 +29,6 @@ const CabinsSchema = Schema({
         max: [10, 'Max 10']
     }
 },{
-    versionkey: false
+    versionKey: false
 });
 export default model('Cabins', CabinsSchema,'cabins');

@@ -7,7 +7,8 @@ class Server{
         this.app= express();
         this.listen();
         this.dbConnection();
-        this.pathCabins = '/api/cabins'//Ruta plublica para el vehiculo        this.route();
+        this.pathCabins = '/api/cabins'
+        this.route();
         // this.port = 3000;
         
     }
@@ -16,7 +17,7 @@ class Server{
     }
     route(){
         this.app.use(json())
-        this.app.get(this.pathCabins,cabinsRoute)//call to controller
+        this.app.use(this.pathCabins,cabinsRoute)//call to controller
         
 
         
